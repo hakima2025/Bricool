@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bricool</title>
+  <style>
+    :root {
+      --primary: #28a57e;
+      --accent: #ffd74b;
+      --light: #fdfdfd;
+      --dark: #1a1a1a;
+    }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: var(--light);
+      color: var(--dark);
+      scroll-behavior: smooth;
+    }
+    header {
+      background: white;
+      padding: 10px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .logo img {
+      height: 50px;
+    }
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .nav-actions button {
+      padding: 8px 14px;
+      border: none;
+      background: var(--primary);
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .lang-switcher button {
+      background: var(--accent);
+      color: black;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .hero {
+      text-align: center;
+      padding: 80px 20px;
+      background: linear-gradient(135deg, #28a57e, #ffd74b);
+      color: white;
+      position: relative;
+    }
+    .hero h1 {
+      font-size: 2.8rem;
+    }
+    .hero p {
+      font-size: 1.3rem;
+      margin: 20px 0;
+    }
+    .hero img {
+      max-width: 300px;
+      margin-top: 30px;
+      border-radius: 10px;
+    }
+    .cta {
+      background: white;
+      color: var(--primary);
+      padding: 12px 24px;
+      border-radius: 30px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    section {
+      max-width: 1000px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+    .features, .testimonials {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+    .feature, .testimonial {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      flex: 1 1 250px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+      text-align: center;
+    }
+    .downloads a {
+      margin: 10px;
+      padding: 10px 20px;
+      background-color: var(--primary);
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    .contact-form input, .contact-form textarea {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+    .contact-form button {
+      background: var(--accent);
+      color: black;
+      font-weight: bold;
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    footer {
+      background: var(--dark);
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="https://i.imgur.com/fUeLKo3.png" alt="Bricool Logo">
+    </div>
+    <div class="nav-actions">
+      <button>تسجيل الدخول</button>
+      <button>فتح حساب</button>
+      <div class="lang-switcher">
+        <button onclick="setLang('en')">EN</button>
+        <button onclick="setLang('fr')">FR</button>
+        <button onclick="setLang('ar')">AR</button>
+      </div>
+    </div>
+  </header>
+  <div class="hero">
+    <h1 id="hero-title">ربط الحرفيين بالعملاء</h1>
+    <p id="hero-sub">ابحث واحجز الحرفي المناسب خلال ثوانٍ</p>
+    <img src="https://i.imgur.com/0OEFS9x.png" alt="Illustration of person using phone" />
+    <br>
+    <a href="#downloads" class="cta" id="cta-button">حمّل التطبيق</a>
+  </div>
+  <section>
+    <h2 id="features-title">مميزات التطبيق</h2>
+    <div class="features">
+      <div class="feature">
+        <h3 id="f1">حرفيون موثوقون</h3>
+        <p id="f1d">محترفون بتقييمات عالية</p>
+      </div>
+      <div class="feature">
+        <h3 id="f2">حجز سريع</h3>
+        <p id="f2d">احجز الخدمة ببضع نقرات</p>
+      </div>
+      <div class="feature">
+        <h3 id="f3">خدمات متنوعة</h3>
+        <p id="f3d">جميع الخدمات في مكان واحد</p>
+      </div>
+    </div>
+  </section>
+  <section id="about">
+    <h2>حول Bricool</h2>
+    <p>Bricool هو منصة تربط بين الحرفيين المهرة والعملاء الذين يبحثون عن خدمة موثوقة وسريعة وبجودة عالية. نحن نؤمن بتمكين الحرفيين وتسهيل عملية حجز الخدمات.</p>
+  </section>
+  <section id="testimonials">
+    <h2>آراء المستخدمين</h2>
+    <div class="testimonials">
+      <div class="testimonial">
+        <p>“وجدت سباك في دقائق وكانت الخدمة ممتازة!”</p>
+        <strong>- سارة ل.</strong>
+      </div>
+      <div class="testimonial">
+        <p>“Bricool سهل عليّ التواصل مع عمال موثوقين. أنصح به بشدة!”</p>
+        <strong>- أحمد ب.</strong>
+      </div>
+      <div class="testimonial">
+        <p>“سريع وفعال وموثوق. بالضبط ما كنت أحتاجه.”</p>
+        <strong>- ياسمين ر.</strong>
+      </div>
+    </div>
+  </section>
+  <section id="downloads" class="downloads">
+    <h2 id="download-title">حمّل التطبيق</h2>
+    <a href="#">App Store</a>
+    <a href="#">Google Play</a>
+  </section>
+  <section id="contact">
+    <h2>تواصل معنا</h2>
+    <form class="contact-form">
+      <input type="text" placeholder="اسمك" required />
+      <input type="email" placeholder="بريدك الإلكتروني" required />
+      <textarea placeholder="رسالتك" rows="5" required></textarea>
+      <button type="submit">إرسال</button>
+    </form>
+  </section>
+  <footer>
+    <p id="contact-text">تواصل معنا: support@bricool.com</p>
+    <p>© 2025 Bricool</p>
+  </footer>
+</body>
+</html>
